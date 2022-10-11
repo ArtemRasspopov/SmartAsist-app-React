@@ -8,7 +8,7 @@ const Logo = () => {
   const theme = useSelector((state: RootState) => state.themeSlice.theme);
 
   return (
-    <Inner theme={theme} href={"/"}>
+    <Inner theme={theme}>
       <LogoIcon />
     </Inner>
   );

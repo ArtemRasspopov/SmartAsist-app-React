@@ -4,11 +4,13 @@ type LogoType = {
   theme: string;
 };
 
-export const Inner = styled.a<LogoType>`
+export const Inner = styled.div<LogoType>`
   display: block;
   width: max-content;
+  display: flex;
+  align-items: center;
 
-  svg {
+  /* svg {
     path {
       transition: fill 0.5s;
     }
@@ -17,5 +19,5 @@ export const Inner = styled.a<LogoType>`
     path:nth-child(11) {
       fill: ${(props) => (props.theme === 'black' ? 'white' : 'black')};
     }
-  }
+  } */
 `;

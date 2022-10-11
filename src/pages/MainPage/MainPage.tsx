@@ -1,14 +1,17 @@
 import React from "react";
-import Container from "../../components/SharedComponents/Container/Container";
-import Logo from "../../components/SharedComponents/Logo/Logo";
-import { Wrapper } from "./MainPageStyle";
+import Header from "../../components/Header/Header";
+import SideMenu from "../../components/SideMenu/SideMenu";
+import InDevelopmentPage from "../InDevelopmentPage/InDevelopmentPage";
+import { Inner, Wrapper } from "./MainPageStyle";
 
 const MainPage = () => {
   return (
     <Wrapper>
-      <Container>
-        <Logo />
-      </Container>
+      <Header/>
+      <Inner>
+        <SideMenu/>
+        <InDevelopmentPage/>
+      </Inner>
     </Wrapper>
   );
 };
