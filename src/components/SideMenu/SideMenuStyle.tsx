@@ -9,6 +9,7 @@ export const MenuList = styled.ul`
   height: calc(100vh - 48px);
   background: #ffffff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 `;
 
 export const MenuItem = styled.li``;
