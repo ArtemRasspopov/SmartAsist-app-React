@@ -1,6 +1,6 @@
 import React from "react";
 import ActivitiesCard from "../../components/Cards/ActivitiesCard/ActivitiesCard";
-import CardWrapper from "../../components/Cards/CardWrapper/CardWrapper";
+// import CardWrapper from "../../components/Cards/CardWrapper/CardWrapper";
 import ExchangeRatesCard from "../../components/Cards/ExchangeRatesCard/ExchangeRatesCard";
 import InvoiceAmountCard from "../../components/Cards/InvoiceAmountCard/InvoiceAmountCard";
 import QuoteDay from "../../components/Cards/QuoteDayCard/QuoteDay";
