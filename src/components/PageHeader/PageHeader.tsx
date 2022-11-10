@@ -4,7 +4,7 @@ import { Title, Wrapper } from './PageHeaderStyle'
 
 interface PageHeaderProps {
   title : string
-  children : React.ReactNode
+  children? : React.ReactNode
 }
 
 const PageHeader = ({title, children} : PageHeaderProps) => {

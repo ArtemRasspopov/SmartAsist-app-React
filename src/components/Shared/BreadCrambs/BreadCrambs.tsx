@@ -6,8 +6,8 @@ const BreadCrambs = () => {
   return (
     
     <List>
-      {breadCrambsArray.map((item) => (
-        <ListItem>{item}</ListItem>
+      {breadCrambsArray.map((item, index) => (
+        <ListItem key={index}>{item}</ListItem>
       ))}
     </List>
     

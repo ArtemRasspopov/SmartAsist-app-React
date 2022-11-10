@@ -1,20 +1,20 @@
 import React from "react";
-import { Header, Inner, Title, Wrapper } from "./CardWrapeprStyle";
+import { Header, HeaderButtons, Inner, Title, Wrapper } from "./CardWrapeprStyle";
 
 interface CardWrapperProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title: string;
+  headerButtons?: React.ReactNode;
 }
 
-const CardWrapper = ({ title, children }: CardWrapperProps) => {
+const CardWrapper = ({ title, children, headerButtons }: CardWrapperProps) => {
   return (
     <Wrapper>
       <Header>
         <Title>{title}</Title>
+        <HeaderButtons>{headerButtons}</HeaderButtons>
       </Header>
-      <Inner>
-        {children}
-      </Inner>
+      <Inner>{children}</Inner>
     </Wrapper>
   );
 };

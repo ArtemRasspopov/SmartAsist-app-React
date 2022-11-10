@@ -1,16 +1,20 @@
-import React from 'react'
-import { Wrapper } from './TransparentAddButtonStyle'
+import React from "react";
+import { Wrapper } from "./TransparentAddButtonStyle";
 
 interface TransparentAddButtonProps {
-  title : string
+  children: React.ReactNode;
+  onClick?: () => void;
 }
 
-const TransparentAddButton = ({title} : TransparentAddButtonProps) => {
+const TransparentAddButton = ({
+  children,
+  onClick,
+}: TransparentAddButtonProps) => {
   return (
-    <Wrapper>
-      <span>+</span> {title}
+    <Wrapper onClick={onClick}>
+      {children}
     </Wrapper>
-  )
-}
+  );
+};
 
-export default TransparentAddButton
+export default TransparentAddButton;

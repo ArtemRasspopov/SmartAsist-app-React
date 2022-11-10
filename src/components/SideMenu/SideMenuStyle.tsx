@@ -38,4 +38,4 @@ export const IconWrapper = styled.div`
   display: flex;
   min-width: 20px;
   justify-content: center;
-`
+`;

@@ -11,7 +11,7 @@ const QuoteDay = () => {
         platform department - technology department -UED
       </Text>
       <ButtonWrapper>
-        <TransparentAddButton title="Add to my collection" />
+        <TransparentAddButton><span>+</span> Add to my collection</TransparentAddButton>
       </ButtonWrapper>
     </Wrapper>
   );
