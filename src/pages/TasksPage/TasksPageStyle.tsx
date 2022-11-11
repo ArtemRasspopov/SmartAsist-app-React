@@ -7,11 +7,12 @@ export const Wrapper = styled.div`
   max-height: calc(100vh - 48px);
 `;
 export const Inner = styled.div`
+  height: 100%;
   padding: 15px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: 15px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 `;
 
 export const CardsWrapper = styled.div`

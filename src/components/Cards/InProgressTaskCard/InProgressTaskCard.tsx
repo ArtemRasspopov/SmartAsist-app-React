@@ -1,10 +1,11 @@
 import React from "react";
 import StarButton from "../../Shared/Buttons/StarButton/StarButton";
+import UrnButton from "../../Shared/Buttons/UrnButton/UrnButton";
 import CardWrapper from "../CardWrapper/CardWrapper";
 import {
   Date,
   Item,
-  ItemBottom,
+  ItemsBottom,
   ItemInfo,
   ItemText,
   List,
@@ -23,7 +24,7 @@ const InProgressTaskCard = () => {
       text: "Ridiculus tempus vitae lectus blandit vulputate dolor integer.",
       datе: "7 days ago",
       isImportant: false,
-      checked: true,
+      checked: false,
     },
     {
       text: "Ridiculus tempus vitae lectus blandit vulputate dolor integer.",
@@ -41,31 +42,31 @@ const InProgressTaskCard = () => {
       text: "Ridiculus tempus vitae lectus blandit vulputate dolor integer.",
       datе: "7 days ago",
       isImportant: false,
-      checked: true,
+      checked: false,
     },
     {
       text: "Ridiculus tempus vitae lectus blandit vulputate dolor integer.",
       datе: "7 days ago",
       isImportant: false,
-      checked: true,
+      checked: false,
     },
   ];
 
   return (
     <Wrapper>
-      <CardWrapper title="In progress">
+      <CardWrapper title="Tasks">
         <List>
           {tasksList.map((item, index) => (
             <Item key={index}>
               <ItemInfo>
-                <ItemText>{item.text}</ItemText>
-                <ItemBottom>
-                  <Date>
-                    {item.datе}
-                    <StarButton/>
-                  </Date>
-                </ItemBottom>
+                <ItemText checked={item.checked}>{item.text}</ItemText>
+                <ItemsBottom>
+                  <Date>{item.datе}</Date>
+                  <StarButton />
+                  <UrnButton />
+                </ItemsBottom>
               </ItemInfo>
+              <input type="checkbox" checked={item.checked} />
             </Item>
           ))}
         </List>

@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   background: #ffffff;
   width: 100%;
+  height: 100%;
   border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
   
 `;
 export const Header = styled.div`
@@ -11,7 +13,7 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  border: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
 `;
 
 export const HeaderButtons = styled.div`
@@ -29,7 +31,6 @@ export const Title = styled.div`
 
 export const Inner = styled.div`
   min-height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
   padding: 24px;
   display: flex;
   flex-direction: column;
