@@ -3,7 +3,7 @@ import RemoveIcon from '../../../SvgIcons/RemoveIcon'
 import { Wrapper } from './RemoveButtonStyle'
 
 interface RemoveButtonProps { 
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const RemoveButton = ({onClick} : RemoveButtonProps) => {

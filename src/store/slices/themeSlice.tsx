@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-const localTheme = JSON.parse(localStorage.getItem("exlabTheme") || "{}");
 
 export interface themeSliceState {
   theme: string;
 }
 
 const initialState: themeSliceState = {
-  theme: localTheme === "object" ? "black" : localTheme,
+  theme: "white"
 };
 
 export const themeSlice = createSlice({

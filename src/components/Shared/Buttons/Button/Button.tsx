@@ -4,7 +4,7 @@ import { Wrapper } from "./ButtonStyle";
 interface ButtonProps {
   children: React.ReactNode;
   bgColor?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = ({ children, bgColor = "red", onClick }: ButtonProps) => {

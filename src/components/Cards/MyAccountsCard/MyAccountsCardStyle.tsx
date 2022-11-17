@@ -46,3 +46,5 @@ export const Info = styled.div`
   line-height: 24px;
   color: rgba(0, 0, 0, 0.85);
 `;
+
+
