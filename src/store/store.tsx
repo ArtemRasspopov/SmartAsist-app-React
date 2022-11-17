@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import themeSlice from './slices/themeSlice'
+import accountsSLice from './slices/accountsSlice'
 
 export const store = configureStore({
   reducer: {
-    themeSlice
+    themeSlice,
+    accountsSLice
   },
 })
 

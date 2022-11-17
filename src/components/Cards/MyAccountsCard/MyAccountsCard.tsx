@@ -3,6 +3,7 @@ import Button from "../../Shared/Buttons/Button/Button";
 import RemoveButton from "../../Shared/Buttons/RemoveButton/RemoveButton";
 import { List } from "../ActivitiesCard/ActivitiesCardStyle";
 import CardWrapper from "../CardWrapper/CardWrapper";
+import { useSelector } from 'react-redux'
 import {
   Item,
   Wrapper,
@@ -12,30 +13,36 @@ import {
   Info,
   Inner,
 } from "./MyAccountsCardStyle";
+import { RootState } from "../../../store/store";
 
 const MyAccountsCard = () => {
-  const accounts = [
-    {
-      title: "Tinkoff",
-      imageSrc: "./images/default-user-icon.png",
-      count: "1200",
-    },
-    {
-      title: "Tinkoff",
-      imageSrc: "./images/default-user-icon.png",
-      count: "1200",
-    },
-    {
-      title: "Tinkoff",
-      imageSrc: "./images/default-user-icon.png",
-      count: "1200",
-    },
-    {
-      title: "Tinkoff",
-      imageSrc: "./images/default-user-icon.png",
-      count: "1200",
-    },
-  ];
+
+  const accounts = useSelector((state : RootState) => state.accountsSLice.accounts)
+  const accountsSum = useSelector((state : RootState) => state.accountsSLice.sum)
+
+
+  // const accounts = [
+  //   {
+  //     title: "Tinkoff",
+  //     imageSrc: "./images/default-user-icon.png",
+  //     count: "1200",
+  //   },
+  //   {
+  //     title: "Tinkoff",
+  //     imageSrc: "./images/default-user-icon.png",
+  //     count: "1200",
+  //   },
+  //   {
+  //     title: "Tinkoff",
+  //     imageSrc: "./images/default-user-icon.png",
+  //     count: "1200",
+  //   },
+  //   {
+  //     title: "Tinkoff",
+  //     imageSrc: "./images/default-user-icon.png",
+  //     count: "1200",
+  //   },
+  // ];
 
   return (
     <Wrapper>
@@ -54,7 +61,7 @@ const MyAccountsCard = () => {
               </Item>
             ))}
           </List>
-          <Info>Amount : 12500 $</Info>
+          <Info>Amount : {accountsSum} $</Info>
         </Inner>
       </CardWrapper>
     </Wrapper>
