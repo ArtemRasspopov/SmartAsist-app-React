@@ -5,8 +5,9 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  
+  border: 1px solid rgba(0, 0, 0, 0.03);  
+  display: flex;
+  flex-direction: column;
 `;
 export const Header = styled.div`
   display: flex;
@@ -34,4 +35,5 @@ export const Inner = styled.div`
   padding: 24px;
   display: flex;
   flex-direction: column;
-`;
+  flex-grow: 1;
+  `;

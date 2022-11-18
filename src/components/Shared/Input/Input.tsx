@@ -5,12 +5,12 @@ interface InputProps {
   type?: React.HTMLInputTypeAttribute | undefined;
   placeholder? : string | undefined;
   value?: string;
-  onChange: (value : string) => void;
+  onChange?: (event : React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input = ({type = 'text', placeholder, value, onChange} : InputProps) => {
+const Input: React.FC<InputProps> = ({type = 'text', placeholder, value, onChange}) => {
   return (
-    <Wrapper type={type} placeholder={placeholder} value={value} onChange={(event) => onChange(event.target.value)}/>
+    <Wrapper type={type} placeholder={placeholder} value={value} onChange={onChange}/>
   )
 }
 

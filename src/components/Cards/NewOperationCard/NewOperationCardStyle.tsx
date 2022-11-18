@@ -13,6 +13,7 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 30px;
 `;
+
 export const Label = styled.label`
   display: flex;
   align-items: center;

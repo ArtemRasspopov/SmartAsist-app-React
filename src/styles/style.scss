@@ -9,3 +9,14 @@ body {
   background-color: #f0f2f5;
   color: rgba(0, 0, 0, 0.85);
 }
+
+*::-webkit-scrollbar {
+  width: 5px;               /* ширина scrollbar */
+}
+*::-webkit-scrollbar-track {
+  background: rgba(60, 60, 60, 0);        /* цвет дорожки */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(49, 49, 49, 0.201);    /* цвет плашки */
+  border-radius: 5px;
+}

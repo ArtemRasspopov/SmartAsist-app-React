@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div``;
 
-export const List = styled.ul``;
+export const List = styled.ul`
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 330px;
+`;
 
 export const Item = styled.li`
   padding: 12px 0;

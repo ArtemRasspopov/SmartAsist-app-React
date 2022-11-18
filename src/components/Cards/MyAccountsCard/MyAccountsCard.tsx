@@ -14,10 +14,7 @@ import {
   Inner,
 } from "./MyAccountsCardStyle";
 import { RootState } from "../../../store/store";
-import {
-  // addNewAccount,
-  removeAccount,
-} from "../../../store/slices/accountsSlice";
+import { removeAccount } from "../../../store/slices/accountsSlice";
 import { Backdrop } from "@mui/material";
 import AddAccountPopup from "../../Popups/AddAccountPopup/AddAccountPopup";
 
@@ -37,8 +34,8 @@ const MyAccountsCard = () => {
     setAddNewPopupIsOpen((prev) => !prev);
   };
 
-  const remove = (title: string) => {
-    dispatch(removeAccount(title));
+  const remove = (id: string) => {
+    dispatch(removeAccount(id));
   };
 
   return (
@@ -58,7 +55,7 @@ const MyAccountsCard = () => {
                 <UserIcon src={item.imageSrc} alt="user-icon" />
                 <Text>{item.title}</Text>
                 <Count>{item.count} $</Count>
-                <RemoveButton onClick={() => remove(item.title)} />
+                <RemoveButton onClick={() => remove(item.id)} />
               </Item>
             ))}
           </List>
@@ -69,7 +66,10 @@ const MyAccountsCard = () => {
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={addNewPopupIsOpen}
       >
-        <AddAccountPopup closePopup={() => setAddNewPopupIsOpen(false)}/>
+        <AddAccountPopup
+          closePopup={setAddNewPopupIsOpen}
+          accounts={accounts}
+        />
       </Backdrop>
     </Wrapper>
   );
