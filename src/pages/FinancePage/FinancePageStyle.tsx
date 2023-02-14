@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   max-height: calc(100vh - 48px);
 `;
+
 export const Inner = styled.div`
   padding: 15px;
   display: grid;

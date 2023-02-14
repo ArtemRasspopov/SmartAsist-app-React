@@ -18,6 +18,7 @@ export const Input = styled.input`
 `;
 
 export const DataList = styled.datalist``;
+
 export const Option = styled.option`
   cursor: pointer;
 `;

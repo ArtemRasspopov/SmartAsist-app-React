@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div``;
+
 export const List = styled.ul``;
+
 export const Item = styled.li`
   display: flex;
   align-items: center;
@@ -19,7 +21,7 @@ export const Count = styled.p`
   
 `;
 
-export const Info = styled.p`
+export const Info = styled.div`
   display: flex;
   gap: 20px;
 `;

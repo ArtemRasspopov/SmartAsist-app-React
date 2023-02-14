@@ -12,6 +12,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  margin-bottom: 20px;
 `;
 
 export const Label = styled.label`
@@ -41,6 +42,6 @@ export const Buttons = styled.div`
   max-width: 500px;
   margin: 0 auto;
   grid-template-columns: 3fr 1fr;
-  margin-top: 60px;
+  margin-top: 20px;
   gap: 20px;
 `

@@ -4,12 +4,16 @@ export const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  max-height: calc(100vh - 48px);
+  overflow-y: scroll;
 `;
+
 export const Inner = styled.div`
   padding: 14px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+
 `;
 
 export const FirstLine = styled.div`

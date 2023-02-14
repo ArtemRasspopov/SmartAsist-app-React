@@ -5,3 +5,7 @@ export type accountType = {
   imageSrc : string,
   count : number
 }
+
+export type categoriesType = {
+  title : string,
+}

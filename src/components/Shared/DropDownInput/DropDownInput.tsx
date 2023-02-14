@@ -1,12 +1,14 @@
 import React from "react";
+import { accountType } from "../../../types/types";
 import { DataList, Input, Option, Wrapper } from "./DropDownInputStyle";
 
 interface DropDownInputProps {
-  options?: string[];
+  options?: accountType[];
   onChange: (value : string) => void;
 }
 
 const DropDownInput = ({ options = [], onChange }: DropDownInputProps) => {
+
   return (
     <Wrapper>
       <Input
@@ -18,7 +20,7 @@ const DropDownInput = ({ options = [], onChange }: DropDownInputProps) => {
       />
 
       <DataList id="DropDownInputList">
-        {options.map((item, index) => <Option value={item} key={index}>{item}</Option>)}
+        {options.map((item, index) => <Option value={item.title} key={index}>{item.title}</Option> )}
       </DataList>
     </Wrapper>
   );
