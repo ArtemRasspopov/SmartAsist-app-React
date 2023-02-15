@@ -35,7 +35,9 @@ export const UserIcon = styled.img`
   border-radius: 50%;
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+  text-transform: capitalize;
+`;
 
 export const Count = styled.p`
   margin-left: auto;
@@ -43,11 +45,13 @@ export const Count = styled.p`
 
 export const Info = styled.div`
   margin-left: auto;
-  /* margin-top: auto; */
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.85);
 `;
 
+export const RemoveButtonFake = styled.div`
+  width: 20px;
+`
 

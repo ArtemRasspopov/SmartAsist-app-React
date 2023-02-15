@@ -1,6 +1,13 @@
 import React from "react";
 import CardWrapper from "../CardWrapper/CardWrapper";
-import { Item, ItemIcon, ItemText, Link, List, Wrapper } from "./ActivitiesCardStyle";
+import {
+  Item,
+  ItemIcon,
+  ItemText,
+  Link,
+  List,
+  Wrapper,
+} from "./ActivitiesCardStyle";
 
 const ActivitiesCard = () => {
   const ActivitiesData = [
@@ -32,23 +39,25 @@ const ActivitiesCard = () => {
   ];
 
   return (
-    <Wrapper>
-      <CardWrapper title="Activities">
-        <List>
-          {ActivitiesData.map((item, index) => (
-            <Item key={index}>
-              <Link>
-                <ItemIcon src={item.icon} alt="icon" />
-                <ItemText>
-                  {item.text}
-                  <span>{item.date}</span>
-                </ItemText>
-              </Link>
-            </Item>
-          ))}
-        </List>
-      </CardWrapper>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <CardWrapper title="Activities">
+          <List>
+            {ActivitiesData.map((item, index) => (
+              <Item key={index}>
+                <Link>
+                  <ItemIcon src={item.icon} alt="icon" />
+                  <ItemText>
+                    {item.text}
+                    <span>{item.date}</span>
+                  </ItemText>
+                </Link>
+              </Item>
+            ))}
+          </List>
+        </CardWrapper>
+      </Wrapper>
+    </>
   );
 };
 

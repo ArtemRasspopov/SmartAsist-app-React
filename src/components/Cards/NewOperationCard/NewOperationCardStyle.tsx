@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 
 export const Inner = styled.div`
   padding: 20px 0;
+  position: relative;
 `;
 
 export const Form = styled.form`

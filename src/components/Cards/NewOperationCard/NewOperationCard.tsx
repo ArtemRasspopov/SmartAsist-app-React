@@ -7,7 +7,8 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import React, { useState } from "react";
-import { useAppSelector } from "../../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks/reduxHooks";
+import { addNewIncome } from "../../../store/slices/accountsSlice";
 import Button from "../../Shared/Buttons/Button/Button";
 // import DropDownInput from "../../Shared/DropDownInput/DropDownInput";
 import Input from "../../Shared/Input/Input";
@@ -15,6 +16,8 @@ import CardWrapper from "../CardWrapper/CardWrapper";
 import { Buttons, Form, Inner, Label, Wrapper } from "./NewOperationCardStyle";
 
 const NewOperationCard = () => {
+  const dispatch = useAppDispatch();
+
   const buttons = [
     <Button key={1} bgColor="#64D30D">
       Income
@@ -51,13 +54,32 @@ const NewOperationCard = () => {
   const [summValue, setSummValue] = useState<number>(10);
   const [commentValue, setCommentValue] = useState<string>("");
   const [errorAlertValue, setErrorAlertValue] = useState<string>("");
-  
+
+  const clearStates = () => {
+    setSelectedCategori(categories[0].title);
+    setOperationNameValue("");
+    setSelectedAccount(accounts[0].title);
+    setCommentValue("");
+    setSummValue(10);
+    setCommentValue("");
+  };
 
   const newOperationHandler = () => {
     if (operationNameValue === "") {
-      setErrorAlertValue(prev => prev = `не заполнено поле "Operation name"`)
+      setErrorAlertValue(
+        (prev) => (prev = `не заполнено поле "Operation name"`)
+      );
     } else {
-      // console.log(true);
+      dispatch(
+        addNewIncome({
+          selectedAccount,
+          selectedCategori,
+          operationNameValue,
+          summValue,
+          commentValue,
+        })
+      );
+      clearStates();
     }
   };
 
@@ -72,7 +94,7 @@ const NewOperationCard = () => {
   const operationNameValueHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setErrorAlertValue(prev => prev = "")
+    setErrorAlertValue((prev) => (prev = ""));
     setOperationNameValue((prev) => (prev = event.target.value));
   };
 
@@ -90,94 +112,96 @@ const NewOperationCard = () => {
   };
 
   return (
-    <Wrapper>
-      <CardWrapper title="New operation" headerButtons={buttons}>
-        <Inner>
-          <Form>
-            <Label>
-              <span>Operation name :</span>
-              <Input
-                value={operationNameValue}
-                type={"text"}
-                placeholder={"Please enter name"}
-                onChange={(event) => operationNameValueHandler(event)}
-              />
-            </Label>
-            <Label>
-              <span>Debit account :</span>
-              <FormControl
-                variant="standard"
-                sx={{ m: 1, width: 300, textAlign: "start" }}
-              >
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={selectedAccount}
-                  onChange={(event) => accountsHandler(event)}
-                  label="Age"
+    <>
+      <Wrapper>
+        <CardWrapper title="New operation" headerButtons={buttons}>
+          <Inner>
+            <Form>
+              <Label>
+                <span>Operation name :</span>
+                <Input
+                  value={operationNameValue}
+                  type={"text"}
+                  placeholder={"Please enter name"}
+                  onChange={(event) => operationNameValueHandler(event)}
+                />
+              </Label>
+              <Label>
+                <span>Debit account :</span>
+                <FormControl
+                  variant="standard"
+                  sx={{ m: 1, width: 300, textAlign: "start" }}
                 >
-                  {accounts.map((item, index) => (
-                    <MenuItem key={index} value={item.title}>
-                      {item.title}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </Label>
-            <Label>
-              <span>Categories :</span>
-              <FormControl
-                variant="standard"
-                sx={{ m: 1, width: 300, textAlign: "start" }}
-              >
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={selectedCategori}
-                  onChange={(event) => categoriesHandler(event)}
-                  label="Age"
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={selectedAccount}
+                    onChange={(event) => accountsHandler(event)}
+                    label="Age"
+                  >
+                    {accounts.map((item, index) => (
+                      <MenuItem key={index} value={item.title}>
+                        {item.title}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Label>
+              <Label>
+                <span>Categories :</span>
+                <FormControl
+                  variant="standard"
+                  sx={{ m: 1, width: 300, textAlign: "start" }}
                 >
-                  {categories.map((item, index) => (
-                    <MenuItem key={index} value={item.title}>
-                      {item.title}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </Label>
-            <Label>
-              <span>Sum :</span>
-              <Input
-                value={summValue.toString()}
-                type={"text"}
-                placeholder={"Please enter Sum"}
-                onChange={(event) => summValueHandler(event)}
-              />
-            </Label>
-            <Label>
-              <span>Comment :</span>
-              <Input
-                value={commentValue}
-                type={"text"}
-                placeholder={"Please enter Comment"}
-                onChange={(event) => commentValueHandler(event)}
-              />
-            </Label>
-          </Form>
-          <Collapse in={Boolean(errorAlertValue)}>
-            <Alert severity="error">
-              {errorAlertValue}
-            </Alert>
-          </Collapse>
-          <Buttons>
-            <Button bgColor="#1890FF" onClick={() => newOperationHandler()}>
-              Add New
-            </Button>
-            <Button bgColor="#1890FF">Cler all</Button>
-          </Buttons>
-        </Inner>
-      </CardWrapper>
-    </Wrapper>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={selectedCategori}
+                    onChange={(event) => categoriesHandler(event)}
+                    label="Age"
+                  >
+                    {categories.map((item, index) => (
+                      <MenuItem key={index} value={item.title}>
+                        {item.title}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Label>
+              <Label>
+                <span>Sum :</span>
+                <Input
+                  value={summValue.toString()}
+                  type={"text"}
+                  placeholder={"Please enter Sum"}
+                  onChange={(event) => summValueHandler(event)}
+                />
+              </Label>
+              <Label>
+                <span>Comment :</span>
+                <Input
+                  value={commentValue}
+                  type={"text"}
+                  placeholder={"Please enter Comment"}
+                  onChange={(event) => commentValueHandler(event)}
+                />
+              </Label>
+            </Form>
+            <Collapse in={Boolean(errorAlertValue)}>
+              <Alert severity="error">{errorAlertValue}</Alert>
+            </Collapse>
+            <Buttons>
+              <Button bgColor="#1890FF" onClick={() => newOperationHandler()}>
+                Add New
+              </Button>
+              <Button bgColor="#1890FF" onClick={() => clearStates()}>
+                Cler all
+              </Button>
+            </Buttons>
+          </Inner>
+        </CardWrapper>
+      </Wrapper>
+    </>
   );
 };
 

@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div``;
 
-export const List = styled.ul``;
+export const List = styled.ul`
+  margin-bottom: 20px;
+`;
 
 export const Item = styled.li`
   padding: 12px 0;
@@ -36,6 +38,8 @@ export const ItemText = styled.p`
   justify-content: flex-start;
   gap: 3px;
   margin-right: auto;
+  text-transform: capitalize;
+  text-align: left;
 
   span {
     display: block;
@@ -45,12 +49,23 @@ export const ItemText = styled.p`
 `;
 
 export const MoreButtonWrapper = styled.div`
-  margin-top: 30px;
   width: 200px;
   display: flex;
+  margin-top: auto;
 
   button{
     width: 100%;
   }
 `
-
+export const Plug = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  p{
+    display: block;
+    text-align: center;
+  }
+`
